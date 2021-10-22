@@ -41,13 +41,5 @@ def board_check():
     for row in range(len(board)-3):
         for col in range(len(board[row])-3):
             if (board[row][col] != "_") and (board[row][col] == board[row+1][col+1] == board[row+2][col+2] == board[row+3][col+3]): return board[row][col]
-    
-board = [["_","_","_","_","_","_","_"],
-        ["_","_","_","_","_","_","_"],
-        ["_","_","X","_","_","_","_"],
-        ["_","_","_","X","_","_","_"],
-        ["_","_","_","_","X","_","_"],
-        ["_","_","_","_","_","X","_"]]
-            
 print_board(board)
 place_mark()
