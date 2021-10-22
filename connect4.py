@@ -1,6 +1,6 @@
 board=[]
 count = [0,0,0,0,0,0,0]
-turn = "X"
+turn = '\33[34m' + "X" + '\33[0m'
 for row in range(6): board.append(["_","_","_","_","_","_","_"])
 def print_board(board):
     n = 5
@@ -12,11 +12,11 @@ def print_board(board):
     print("  0 1 2 3 4 5 6\n\n")
 def place_mark():
     global board, turn
-    if board_check() == "X" or board_check() == "O":
-        print("The winner is " + board_check())
+    if board_check() == '\33[34m' + "X" + '\33[0m' or board_check() == '\33[33m' + "O" + '\33[0m':
+        print('\033[6m' + "The winner is " + board_check() + '\033[0m')
         return
     while True:
-        i = input(turn + " Pick Move, x\n")
+        i = input(turn + " Pick Move: ")
         try:
             if 5- count[int(i)] < 0: raise
             board[5 - count[int(i)]][int(i)] = turn
@@ -25,8 +25,8 @@ def place_mark():
         except: print("Invalid input!") 
     print_board(board) 
     board_check()
-    if turn == "X": turn = "O" 
-    else: turn = "X"
+    if turn == '\33[34m' + "X" + '\33[0m': turn = '\33[33m' + "O" + '\33[0m' 
+    else: turn = '\33[34m' + "X" + '\33[0m'
     place_mark()
 def board_check():
     for row in range(len(board)): 
