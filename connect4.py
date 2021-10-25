@@ -18,8 +18,8 @@ def place_mark(): #recursive function, calls itself till there is a winner. Basi
     while True: #repeats until a valid move is selected
         i = input(turn + " Pick Move: ") #gets input
         try: #basically we try to input the players input on the board and if it is out of range it will "raise an error"
-            if 5 - count[int(i)] < 0: raise #raises the error if out of bounds
-            board[5 - count[int(i)]][int(i)] = turn #will raises the error if out of bounds
+            if 5 - count[int(i)] < 0: raise #raises the error if out of bounds in the negative direction 
+            board[5 - count[int(i)]][int(i)] = turn #will raises the error if out of bounds in the positive direction
             count[int(i)] += 1 #adds a value to the y stack initiated on line 2, one again so we know where to place the next coin in the same coloumn
             break #breaks the while loop and allows the function to move on
         except: print("Invalid input!") #this is where if there is an error raised in the try statment we will make the player pick again by the while loop repeating
