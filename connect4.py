@@ -10,7 +10,7 @@ def print_board(board): #prints the board with some fancy stuff for rows and col
         print(line)
         n-=1
     print("  0 1 2 3 4 5 6\n\n")
-def place_mark(): #recursive function, calls itself till there is a winner. Basically a while loop until the boar_check function returns a winner
+def place_mark(): #recursive function, calls itself till there is a winner. Basically a while loop until the board_check function returns a winner
     global board, turn
     if board_check() == '\33[34m' + "X" + '\33[0m' or board_check() == '\33[33m' + "O" + '\33[0m': #if board_check returns a winner
         print('\033[6m' + "The winner is " + board_check() + '\033[0m') #print out whos the winner 
