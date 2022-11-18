@@ -1,1 +1,1 @@
-12
+connect 4 with colors and input in 12 lines
